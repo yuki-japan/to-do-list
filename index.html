@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	
+	<div id="app">
+		<input type="text" v-model="message"><br>
+		{{ message }}
+	</div>
+
+	<div id="app2">
+		<ul v-for="(todo,index) in list">
+			<li> {{ index + 1 }}:{{ todo.text }} </li>
+		</ul>
+	</div>
+
+	<div id="app3">
+		<input type="text" v-model="addText" placeholder="Enter ToDo">
+		<button v-on:click="addToDo()">Add</button><hr>
+
+		<ul v-for="(todo,index) in list">
+			<li> {{ index + 1 }}:{{ todo.text }} </li>
+		</ul>
+	</div>
+
+	<div id="app4">
+		<form>
+			<label for="radio_01">Option1</label><input type="radio" id="radio_01" value="Option1" v-model="selected">
+			<label for="radio_02">Option2</label><input type="radio" id="radio_02" value="Option2" v-model="selected">
+			<label for="radio_03">Option3</label><input type="radio" id="radio_03" value="Option3" v-model="selected">
+		</form>
+		<p>: Your answer is {{ selected }} </p>
+	</div>
+
+	<div id="app5">
+		<form>
+			<label for="check_01"> CHECK</label>
+			<input type="checkbox" id="check_01" v-model="selected" true-value="Checked" false-value="Unchecked">
+		</form>
+		<p>:{{ selected }}</p>
+	</div>
+
+	<div id="app6">
+		<form>
+			<select v-model="selected_value">
+				<option value="">Please selecte one option</option>
+				<option>Orange</option>
+				<option>Apple</option>
+				<option>Peach</option>
+			</select>
+		</form>
+		<p>:You have selected {{ selected_value }}</p>
+	</div>
+
+	<script type="text/javascript" src="content.js"></script>
+</body>
+</html>
